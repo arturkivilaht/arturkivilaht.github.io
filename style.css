@@ -1,46 +1,82 @@
-/* General Page Styling */
+/* Custom Variables for easy color changes */
+:root {
+    --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --accent-color: #2c3e50;
+    --text-main: #34495e;
+    --white: rgba(255, 255, 255, 0.9);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Georgia', serif;
-    line-height: 1.8;
-    max-width: 750px;
-    margin: 80px auto;
-    padding: 0 30px;
-    color: #2c3e50;
-    background-color: #fdfdfd;
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    padding: 40px 20px;
 }
 
-/* Header / Name Styling */
+/* The Glass Card */
+.glass-container {
+    background: var(--white);
+    backdrop-filter: blur(10px);
+    max-width: 800px;
+    padding: 60px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: transform 0.3s ease;
+}
+
+.glass-container:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+}
+
+/* Typography Flair */
 h1 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 0.2rem;
-    color: #1a1a1a;
-    letter-spacing: -1px;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--accent-color);
+    margin-bottom: 10px;
 }
 
-/* Updated Subtitle */
-.subtitle {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-size: 1.2rem;
-    color: #7f8c8d;
-    margin-bottom: 3rem;
+.subtitle-badge {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    letter-spacing: 3px; /* Slightly wider spacing for a minimalist musical feel */
-    border-bottom: 1px solid #eee;
-    padding-bottom: 15px;
+    margin-bottom: 40px;
 }
 
-/* Biography Text Styling */
-.bio-section p {
-    margin-bottom: 1.8rem;
-    font-size: 1.15rem;
-    text-align: justify;
+.bio-content p {
+    line-height: 1.9;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    font-weight: 300;
 }
 
-/* Mobile Responsiveness */
+footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 0.8rem;
+    color: #95a5a6;
+    text-align: center;
+}
+
+/* Mobile responsive fixes */
 @media (max-width: 600px) {
-    body { margin: 40px auto; }
+    .glass-container { padding: 30px; }
     h1 { font-size: 2.2rem; }
-    .bio-section p { text-align: left; }
 }
