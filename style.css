@@ -202,32 +202,29 @@ footer { margin-top: 40px; text-align: center; color: var(--text-muted); font-si
 }
 
 /* --- 10. SCROLL-DRIVEN VANISHING EFFECT --- */
-
-/* Targets paragraphs with the .scroll-fade class */
 .scroll-fade {
-    /* Links the fade to the element's position as you scroll */
+    /* Critical 2025 Fix: Needs a duration to be visible */
     animation: vanish linear both;
+    animation-duration: 1ms; 
     animation-timeline: view();
-    /* Range: Starts fading as it approaches the top, disappears as it exits */
     animation-range: exit 0% exit 60%;
 }
 
 @keyframes vanish {
     from {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        filter: blur(0px);
+        opacity: 1; /* Ensures text is visible at the start */
+        transform: translateY(0);
     }
     to {
         opacity: 0;
-        transform: translateY(-40px) scale(0.98);
-        filter: blur(8px); /* Sleek disappearing blur */
+        transform: translateY(-40px);
     }
 }
 
-/* Ensure the Biography header also vanishes smoothly */
-#main-bio-header.sleek-header {
-    animation: vanish linear both;
-    animation-timeline: view();
-    animation-range: exit 0% exit 60%;
+/* Safety: If your browser is too old for scroll animations, 
+   this keeps the text visible. */
+@supports not (animation-timeline: view()) {
+    .scroll-fade {
+        opacity: 1 !important;
+    }
 }
