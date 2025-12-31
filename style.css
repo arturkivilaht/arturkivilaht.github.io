@@ -83,9 +83,11 @@ nav a.active, nav a:hover {
     text-shadow: 0 0 10px var(--accent);
 }
 
-/* 6. HEADERS */
+/* --- 6. HEADERS & HIERARCHY --- */
+
 header { text-align: center; margin-bottom: 40px; }
 
+/* The Main Name */
 h1 { 
     font-family: 'Playfair Display', serif; 
     font-size: clamp(2.5rem, 7vw, 4rem);
@@ -96,7 +98,7 @@ h1 {
     -webkit-text-fill-color: transparent;
 }
 
-/* --- LEVEL 1: THE MAIN SUBTITLE (Musician) --- */
+/* LEVEL 1: THE MAIN SUBTITLE (Musician) */
 .subtitle { 
     color: var(--accent); 
     text-transform: uppercase; 
@@ -106,26 +108,52 @@ h1 {
     display: block;
     text-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
     margin-bottom: 20px;
+    font-weight: 600;
 }
 
-/* --- LEVEL 2: THE PRIMARY "BIOGRAPHY" HEADER --- */
-/* This looks like a big, bold section start */
-#main-bio-header {
-    font-family: 'Playfair Display', serif; /* Matching your Name's font */
-    font-size: 2rem;
-    color: #ffffff;
-    text-transform: none; /* Classy sentence case */
-    letter-spacing: 0px;
-    border-bottom: 2px solid var(--accent); /* Thicker, colored line */
-    padding-bottom: 10px;
-    margin: 0 0 40px 0;
+/* LEVEL 2: THE PRIMARY SLEEK "BIOGRAPHY" HEADER */
+#main-bio-header.sleek-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem; 
+    font-weight: 700;
+    background: linear-gradient(90deg, #ffffff, #6366f1, #ffffff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 5s linear infinite;
+    text-transform: none;
+    letter-spacing: -1px; 
+    margin: 0 0 30px 0;
+    padding-bottom: 15px;
+    position: relative;
     display: block;
 }
-#main-bio-header::before { display: none; } /* Removes the dash for this one */
 
-/* --- LEVEL 3: THE SUBHEADERS (Education, Career, etc.) --- */
-/* These look like clean, professional sub-points */
-h2 {
+/* Animated Sleek Underline for Biography */
+#main-bio-header.sleek-header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 10px;
+    box-shadow: 0 0 15px var(--accent);
+    transition: width 0.4s ease;
+}
+
+/* Hover Effect: Line expands on the card */
+.glass-card:hover #main-bio-header.sleek-header::after {
+    width: 120px;
+}
+
+@keyframes shine {
+    to { background-position: 200% center; }
+}
+
+/* LEVEL 3: THE SUBHEADERS (Education, Career, etc.) */
+h2:not(#main-bio-header) {
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--text-muted);
@@ -138,7 +166,7 @@ h2 {
     align-items: center;
 }
 
-/* Adds the cool accent dash ONLY to the subheaders */
+/* Adds the cool accent dash only to the sub-sections */
 h2:not(#main-bio-header)::before {
     content: "";
     width: 15px;
