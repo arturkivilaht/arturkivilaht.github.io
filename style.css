@@ -92,17 +92,26 @@ header {
     align-items: center;
 }
 
-/* EDITED H1: Tightened, balanced, and shadowed for 2025 */
+/* REFINED AIRY-SLEEK H1 */
 h1 { 
     font-family: 'Playfair Display', serif; 
-    font-size: clamp(2.8rem, 8vw, 4.5rem); 
+    font-size: clamp(2.5rem, 7.5vw, 4rem);
     font-weight: 700;
-    color: #ffffff;
-    letter-spacing: -0.03em; 
-    line-height: 1.1;
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
-    text-wrap: balance; 
-    margin: 0;
+    
+    /* Subtle 2025 "Glass" Gradient - White to very light grey */
+    background: linear-gradient(180deg, #ffffff 40%, rgba(255, 255, 255, 0.7) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Clean "Non-Touching" Spacing */
+    letter-spacing: -0.01em; /* Tight enough to be sleek, wide enough to breathe */
+    line-height: 1.2;
+    
+    /* Deep but invisible depth */
+    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    
+    text-wrap: balance;
+    margin-bottom: 0.2em; /* Gives room for the subtitle below */
 }
 
 /* SET 1: Branding Subtitle (Centered, Airy) */
@@ -119,24 +128,33 @@ h1 {
     opacity: 0.9;
 }
 
-/* SET 2: Primary Section Header (Biography) */
+/* SET 2: Primary Section Header (Biography) - Refined Sleek */
 #main-bio-header.sleek-header {
     font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 4vw, 2.2rem); /* Dynamic scaling */
     font-weight: 700;
-    color: #ffffff;
+    
+    /* Matching "Glass" Gradient */
+    background: linear-gradient(180deg, #ffffff 50%, rgba(255, 255, 255, 0.7) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Clean "Non-Touching" Spacing */
+    letter-spacing: -0.01em; 
     margin: 0 0 40px 0;
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
+/* Matching accented vertical line */
 #main-bio-header.sleek-header::before {
     content: "";
-    width: 4px;
-    height: 35px;
+    width: 3px; /* Slightly thinner for a sleeker look */
+    height: 1.2em; /* Scales perfectly with font size */
     background: var(--accent);
-    border-radius: 2px;
+    border-radius: 4px;
+    opacity: 0.9;
 }
 
 /* SET 3: Functional Subheaders (Education, etc.) */
