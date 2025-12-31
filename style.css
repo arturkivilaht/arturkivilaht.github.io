@@ -1,111 +1,138 @@
-/* Color Palette */
+/* Color Palette: Dark Forest, Aged Paper, and Carbon */
 :root {
-    --forest-green: #1b3022;
-    --antique-paper: #efead9; /* Slightly darker, aged parchment */
-    --carbon: #1a1a1a;
-    --muted-gold: #a68a56;
+    --forest: #1b3022;
+    --paper: #e5dfcc; /* Darkened, rich parchment */
+    --carbon: #121212;
+    --border: rgba(27, 48, 34, 0.15);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: var(--antique-paper);
+    background-color: var(--paper);
     color: var(--carbon);
     font-family: 'Crimson Pro', serif;
     line-height: 1.8;
-    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    padding: 60px 20px;
 }
 
-/* Site Layout */
-.layout-container {
-    display: flex;
-    min-height: 100vh;
+/* 2025 Texture Flair */
+.texture-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url("www.transparenttextures.com");
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 100;
 }
 
-/* Side Branding - Forest Green */
-.side-branding {
-    width: 35%;
-    background-color: var(--forest-green);
-    color: var(--antique-paper);
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Elaborate Header Styling */
+.main-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.location {
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--forest);
+    opacity: 0.7;
+}
+
+h1 {
+    font-family: 'IM Fell English SC', serif;
+    font-size: clamp(3rem, 10vw, 5.5rem);
+    color: var(--forest);
+    line-height: 1;
+    margin: 20px 0;
+    font-weight: 400;
+}
+
+.title-wrap {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px;
-    position: sticky;
-    top: 0;
-    height: 100vh;
+    gap: 15px;
 }
 
-.sticky-box h1 {
-    font-size: clamp(2.5rem, 6vw, 4rem);
+.instrument {
     text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: -1px;
-    line-height: 1;
+    letter-spacing: 5px;
+    font-size: 0.8rem;
+    color: var(--carbon);
 }
 
-.accent-mark {
-    width: 50px;
-    height: 2px;
-    background-color: var(--muted-gold);
-    margin: 25px 0;
+.diamond {
+    width: 8px;
+    height: 8px;
+    background: var(--forest);
+    transform: rotate(45deg);
 }
 
-.tag {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    opacity: 0.8;
+/* Elaborate Narrative Card */
+.narrative-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--border);
+    padding: 80px 10%;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 20px 20px 0px var(--forest); /* Offset "Folk" shadow */
 }
 
-/* Main Content - Narrative */
-.music-narrative {
-    width: 65%;
-    padding: 100px 10% 100px 8%;
-}
-
-/* Uniform Paragraphs - No Paragraph Stands Out */
-.bio-paragraphs p {
+/* Uniform Paragraph Formatting */
+.text-block p {
     font-size: 1.25rem;
-    margin-bottom: 2.2rem;
+    margin-bottom: 2.5rem;
     font-weight: 400;
     text-align: justify;
     color: var(--carbon);
 }
 
-footer {
-    margin-top: 80px;
+.text-block p:last-child {
+    margin-bottom: 0;
+}
+
+/* Decorative Footer */
+.site-footer {
+    margin-top: 60px;
+    text-align: center;
+    border-top: 1px solid var(--border);
     padding-top: 30px;
-    border-top: 1px solid rgba(0,0,0,0.1);
 }
 
-footer p {
-    font-size: 0.9rem !important; /* Smaller for footer only */
-    color: #666;
-    letter-spacing: 1px;
+.site-footer p {
+    font-size: 0.85rem !important;
+    letter-spacing: 2px;
     text-transform: uppercase;
+    color: var(--forest);
 }
 
-/* Mobile Responsiveness for 2025 */
-@media (max-width: 1024px) {
-    .layout-container {
-        flex-direction: column;
-    }
-    .side-branding {
-        width: 100%;
-        height: auto;
-        padding: 80px 40px;
-        position: relative;
-    }
-    .music-narrative {
-        width: 100%;
-        padding: 60px 10%;
-    }
-    .bio-paragraphs p {
-        text-align: left;
-    }
+/* Ornaments */
+.corner-ornament {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    border: 2px solid var(--forest);
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.top-left { top: 40px; left: 40px; border-right: none; border-bottom: none; }
+.bottom-right { bottom: 40px; right: 40px; border-left: none; border-top: none; }
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    body { padding: 40px 15px; }
+    .narrative-card { padding: 40px 25px; box-shadow: 10px 10px 0px var(--forest); }
+    h1 { font-size: 3rem; }
+    .text-block p { text-align: left; font-size: 1.15rem; }
+    .corner-ornament { display: none; }
 }
