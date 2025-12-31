@@ -1,6 +1,6 @@
 /* 
    THEME: Green, Parchment & Black
-   FONTS: Times New Roman (Headers), Helvetica (Body)
+   FONTS: Helvetica (Specific Headers), Times New Roman (Biography Headers)
    UPDATED: December 31, 2025
 */
 
@@ -21,6 +21,7 @@ html { scroll-behavior: smooth; }
 body {
     background-color: var(--bg-main);
     color: var(--text-dark);
+    /* Default Body Font: Helvetica */
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.8;
     overflow-x: hidden;
@@ -28,7 +29,7 @@ body {
     min-height: 100vh;
 }
 
-/* 3. DYNAMIC MESH BACKGROUND (Green Blobs) */
+/* 3. DYNAMIC MESH BACKGROUND */
 .mesh-bg {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -42,7 +43,7 @@ body {
     width: 600px; 
     height: 600px; 
     border-radius: 50%; 
-    opacity: 0.15; /* Base visibility for mobile */
+    opacity: 0.15; 
     animation: float 20s infinite alternate; 
     transition: opacity 0.5s ease, background 0.5s ease;
 }
@@ -61,7 +62,7 @@ body {
     padding: 120px 20px 40px 20px;
 }
 
-/* 4. NAVIGATION PILL */
+/* 4. NAVIGATION PILL (Helvetica per request) */
 nav {
     display: flex;
     position: fixed; 
@@ -81,6 +82,8 @@ nav {
 }
 
 nav a {
+    /* Set Contact and News links to Helvetica */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: var(--text-muted);
     text-decoration: none;
     text-transform: uppercase;
@@ -97,11 +100,13 @@ nav a:hover, nav a.active { color: var(--accent); }
 header { text-align: center; margin-bottom: 60px; display: flex; flex-direction: column; align-items: center; }
 
 h1 { 
-    font-family: 'Times New Roman', Times, serif; 
+    /* Set "Artur Kivilaht" to Helvetica per request */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
     font-size: clamp(2.5rem, 8vw, 4.5rem);
     font-weight: 700;
     color: var(--text-dark);
     line-height: 1.1;
+    letter-spacing: -0.02em;
 }
 
 .subtitle { 
@@ -111,9 +116,10 @@ h1 {
     font-size: 0.85rem; 
     font-weight: 600; 
     margin-top: 15px; 
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
 }
 
-/* 6. BIOGRAPHY & SECTIONS */
+/* 6. BIOGRAPHY HEADERS (Keeping Times New Roman for professional contrast) */
 #main-bio-header.sleek-header {
     font-family: 'Times New Roman', Times, serif;
     font-size: clamp(1.8rem, 5vw, 2.2rem);
@@ -130,6 +136,7 @@ h1 {
 }
 
 .sub-section {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 0.8rem; font-weight: 700;
     color: var(--text-muted);
     text-transform: uppercase;
@@ -159,7 +166,7 @@ h1 {
 p { font-size: 1.05rem; margin-bottom: 1.8rem; color: #1a1a1a; }
 footer { margin: 80px 0 40px 0; text-align: center; color: var(--text-muted); font-size: 0.75rem; }
 
-/* 8. MOBILE RESPONSIVE (Adjustments up to 768px) */
+/* 8. MOBILE RESPONSIVE */
 @media (max-width: 768px) {
     nav { width: 92%; justify-content: center; }
     nav a { font-size: 0.6rem; padding: 8px 8px; }
@@ -167,19 +174,14 @@ footer { margin: 80px 0 40px 0; text-align: center; color: var(--text-muted); fo
     .blob { width: 300px; height: 300px; }
 }
 
-/* 9. DESKTOP BOOST (Stronger Green for screens 1024px+) */
+/* 9. DESKTOP BOOST (Enhanced green tinge for large screens) */
 @media (min-width: 1024px) {
     .blob { 
-        opacity: 0.35; /* Increased from 0.15 for better desktop visibility */
-        width: 800px;  /* Larger blobs for computer monitors */
+        opacity: 0.35; 
+        width: 800px;  
         height: 800px;
     }
-    
-    /* Richer green tones specifically for desktop monitors */
     .b1 { background: #40916c; } 
     .b2 { background: #1b4332; } 
-    
-    .mesh-bg {
-        filter: blur(140px); /* Smoother blur for higher resolution screens */
-    }
+    .mesh-bg { filter: blur(140px); }
 }
