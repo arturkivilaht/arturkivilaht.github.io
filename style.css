@@ -99,10 +99,14 @@ h1 {
 .subtitle { 
     color: var(--accent); 
     text-transform: uppercase; 
-    letter-spacing: 4px;
-    font-size: 1.1rem;
+    letter-spacing: 6px;    /* Wider spacing for a premium feel */
+    font-size: 1.2rem;      /* Larger than standard text */
     font-weight: 600; 
-    margin-top: 10px;
+    margin-top: 15px;       /* Space between name and subtitle */
+    text-align: center;     /* Centers it perfectly under your name */
+    display: block;
+    text-shadow: 0 0 15px rgba(99, 102, 241, 0.4); /* Subtle indigo glow */
+    opacity: 0.9;
 }
 
 /* 7. NEW: SUBHEADERS (h2) */
