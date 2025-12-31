@@ -1,5 +1,7 @@
+/* 1. FONT IMPORTS */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600&family=Playfair+Display:wght@700&display=swap');
 
+/* 2. VARIABLES */
 :root {
     --bg-main: #0a0a12; 
     --accent: #6366f1; 
@@ -9,6 +11,7 @@
     --border: rgba(255, 255, 255, 0.08);
 }
 
+/* 3. RESET & BASE */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -20,6 +23,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* 4. DYNAMIC MESH BACKGROUND */
 .mesh-bg {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -45,6 +49,7 @@ body {
 
 .container { max-width: 850px; margin: 0 auto; padding: 40px 20px; }
 
+/* 5. NAVIGATION PILL */
 nav {
     display: inline-flex;
     position: sticky;
@@ -77,19 +82,28 @@ nav a.active, nav a:hover {
     text-shadow: 0 0 10px var(--accent);
 }
 
+/* --- 6. REFINED SLEEK HIERARCHY --- */
 header { 
     text-align: center; 
     margin-bottom: 60px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* REFINED SLEEK H1 */
 h1 { 
     font-family: 'Playfair Display', serif; 
     font-size: clamp(2.5rem, 7.5vw, 4rem);
     font-weight: 700;
-    color: #ffffff;
-    letter-spacing: -0.01em; 
-    line-height: 1.2;
-    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(180deg, #ffffff 50%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em; 
+    line-height: 1.1;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+    text-wrap: balance;
 }
 
 .subtitle { 
@@ -101,25 +115,33 @@ h1 {
     margin-top: 15px; 
 }
 
+/* REFINED SLEEK BIOGRAPHY HEADER */
 #main-bio-header.sleek-header {
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
     font-weight: 700;
-    color: #ffffff;
-    display: flex;
+    background: linear-gradient(180deg, #ffffff 50%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-flex; 
     align-items: center;
     gap: 15px;
-    margin: 0 0 40px 0;
+    margin: 0 0 30px 0;
+    letter-spacing: -0.015em;
 }
 
 #main-bio-header.sleek-header::before {
     content: "";
     width: 3px;
-    height: 35px;
+    height: 1.1em;
     background: var(--accent);
     border-radius: 4px;
+    -webkit-text-fill-color: initial; 
+    flex-shrink: 0;
 }
 
+/* SET 3: Subsections */
 .sub-section {
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem; 
@@ -142,6 +164,7 @@ h1 {
     margin-right: 12px;
 }
 
+/* 8. CONTENT CARD */
 .glass-card {
     background: var(--glass);
     backdrop-filter: blur(25px);
@@ -155,6 +178,7 @@ p {
     margin-bottom: 1.8rem; 
     font-weight: 300; 
     color: #cbd5e1;
+    text-align: left;
 }
 
 footer { margin-top: 40px; text-align: center; color: var(--text-muted); font-size: 0.7rem; }
