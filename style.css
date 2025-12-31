@@ -95,13 +95,13 @@ header {
 /* EDITED H1: Tightened, balanced, and shadowed for 2025 */
 h1 { 
     font-family: 'Playfair Display', serif; 
-    font-size: clamp(2.8rem, 8vw, 4.5rem); /* Slightly larger for impact */
+    font-size: clamp(2.8rem, 8vw, 4.5rem); 
     font-weight: 700;
     color: #ffffff;
-    letter-spacing: -0.03em; /* Tightened tracking for elegant editorial look */
+    letter-spacing: -0.03em; 
     line-height: 1.1;
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Subtle depth */
-    text-wrap: balance; /* Modern CSS: keeps line lengths even on wrap */
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
+    text-wrap: balance; 
     margin: 0;
 }
 
@@ -112,7 +112,7 @@ h1 {
     letter-spacing: 8px; 
     font-size: 0.9rem; 
     font-weight: 600; 
-    margin-top: 15px; /* Slightly more space from h1 */
+    margin-top: 15px; 
     display: block;
     width: 100%;
     text-align: center; 
