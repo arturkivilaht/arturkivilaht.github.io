@@ -200,36 +200,3 @@ footer { margin-top: 40px; text-align: center; color: var(--text-muted); font-si
     h2 { font-size: 1.1rem; margin-top: 35px; }
     p { font-size: 1.05rem; }
 }
-
-/* --- 10. REFINED SCROLL-DRIVEN VANISHING EFFECT --- */
-
-.scroll-fade {
-    animation: vanish linear both;
-    animation-duration: 1ms; /* Required for 2025 Firefox support */
-    animation-timeline: view();
-    
-    /* NEW RANGE: Keeps text visible longer. 
-       Starts fading ONLY when it's almost at the very top. */
-    animation-range: exit 10% exit 80%;
-}
-
-/* Ensure the Biography header also uses this refined range */
-#main-bio-header.sleek-header {
-    animation: vanish linear both;
-    animation-duration: 1ms;
-    animation-timeline: view();
-    animation-range: exit 10% exit 80%;
-}
-
-@keyframes vanish {
-    from {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        filter: blur(0px);
-    }
-    to {
-        opacity: 0;
-        transform: translateY(-50px) scale(0.95); /* Slight upward lift */
-        filter: blur(12px); /* Deep, sophisticated dissolution */
-    }
-}
