@@ -84,7 +84,13 @@ nav a.active, nav a:hover {
 }
 
 /* --- 6. THREE-TIER SLEEK HIERARCHY --- */
-header { text-align: center; margin-bottom: 60px; }
+header { 
+    text-align: center; 
+    margin-bottom: 60px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures everything in header is centered */
+}
 
 h1 { 
     font-family: 'Playfair Display', serif; 
@@ -103,6 +109,8 @@ h1 {
     font-weight: 600; 
     margin-top: 10px; 
     display: block;
+    width: 100%;
+    text-align: center; /* Forces the text to the middle */
     opacity: 0.8;
 }
 
@@ -137,8 +145,36 @@ h1 {
     margin: 50px 0 15px 0;
     padding-bottom: 12px;
     border-bottom: 1px solid var(--border);
-    display: block;
+    display: flex; /* Changed to flex to align the dash */
+    align-items: center;
 }
+
+/* This adds the blue hyphen/dash to your subheaders */
+.sub-section::before {
+    content: "";
+    width: 15px;
+    height: 1px;
+    background: var(--accent); /* This is your blue/indigo color */
+    margin-right: 12px;
+    display: inline-block;
+}
+
+/* 9. MOBILE FIXES */
+@media (max-width: 768px) {
+    nav {
+        position: relative; 
+        top: 0; left: 0; transform: none;
+        width: 95%; display: flex;
+        justify-content: center;
+        gap: 5px; padding: 8px;
+        margin-bottom: 40px;
+    }
+    nav a { font-size: 0.65rem; padding: 8px 4px; }
+    .glass-card { padding: 30px 20px; }
+    h1 { font-size: 2.2rem; }
+    .subtitle { letter-spacing: 4px; font-size: 0.8rem; }
+    #main-bio-header.sleek-header { font-size: 1.8rem; margin-bottom: 30px; }
+    .sub-section { font-size: 0.75rem; letter-spacing: 3px; }
 
 /* 8. CONTENT CARD & SLEEK PARAGRAPHS */
 .glass-card {
