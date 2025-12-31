@@ -111,45 +111,43 @@ h1 {
     font-weight: 600;
 }
 
-/* LEVEL 2: THE PRIMARY SLEEK "BIOGRAPHY" HEADER */
+/* --- LEVEL 2: THE PRIMARY SLEEK "BIOGRAPHY" HEADER (NO FLASHING) --- */
 #main-bio-header.sleek-header {
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem; 
     font-weight: 700;
-    background: linear-gradient(90deg, #ffffff, #6366f1, #ffffff);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shine 5s linear infinite;
+    
+    /* Solid Sleek Silver/White - Removed the moving gradient */
+    color: #ffffff;
+    
     text-transform: none;
     letter-spacing: -1px; 
     margin: 0 0 30px 0;
     padding-bottom: 15px;
     position: relative;
     display: block;
+    
+    /* Subtle glow so it still feels premium but doesn't flash */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
-/* Animated Sleek Underline for Biography */
+/* Static Sleek Underline for Biography */
 #main-bio-header.sleek-header::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 60px;
+    width: 60px; /* Short, elegant accent line */
     height: 3px;
     background: var(--accent);
     border-radius: 10px;
     box-shadow: 0 0 15px var(--accent);
-    transition: width 0.4s ease;
+    transition: width 0.4s ease; /* Grows only when you hover over the card */
 }
 
-/* Hover Effect: Line expands on the card */
+/* Hover Effect: Line expands smoothly when the mouse is over the card */
 .glass-card:hover #main-bio-header.sleek-header::after {
     width: 120px;
-}
-
-@keyframes shine {
-    to { background-position: 200% center; }
 }
 
 /* LEVEL 3: THE SUBHEADERS (Education, Career, etc.) */
