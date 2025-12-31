@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600&family=Playfair+Display:wght@700&display=swap');
 
+/* 2. VARIABLES */
 :root {
     --bg-main: #0a0a12; 
     --accent: #6366f1; 
@@ -9,6 +10,7 @@
     --border: rgba(255, 255, 255, 0.08);
 }
 
+/* 3. RESET & BASE */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -20,6 +22,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* 4. DYNAMIC MESH BACKGROUND */
 .mesh-bg {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -45,6 +48,7 @@ body {
 
 .container { max-width: 850px; margin: 0 auto; padding: 40px 20px; }
 
+/* 5. NAVIGATION PILL */
 nav {
     display: inline-flex;
     position: sticky;
@@ -59,6 +63,7 @@ nav {
     gap: 20px;
     margin-bottom: 60px;
     z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 nav a {
@@ -69,7 +74,7 @@ nav a {
     font-size: 0.75rem;
     font-weight: 500;
     padding: 8px 12px;
-    transition: 0.4s;
+    transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 nav a.active, nav a:hover { 
@@ -77,21 +82,35 @@ nav a.active, nav a:hover {
     text-shadow: 0 0 10px var(--accent);
 }
 
+/* --- 6. REFINED SLEEK HIERARCHY --- */
 header { 
     text-align: center; 
     margin-bottom: 60px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* REFINED SLEEK H1 */
 h1 { 
     font-family: 'Playfair Display', serif; 
     font-size: clamp(2.5rem, 7.5vw, 4rem);
     font-weight: 700;
-    color: #ffffff;
-    letter-spacing: -0.01em; 
-    line-height: 1.2;
-    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    
+    /* Metallic Silver Gradient */
+    background: linear-gradient(to bottom, #ffffff 60%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    letter-spacing: -0.015em; 
+    line-height: 1.1;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-wrap: balance;
+    margin-bottom: 0.2em;
 }
 
+/* SET 1: Branding Subtitle (Centered, Airy) */
 .subtitle { 
     color: var(--accent); 
     text-transform: uppercase; 
@@ -99,27 +118,42 @@ h1 {
     font-size: 0.9rem; 
     font-weight: 600; 
     margin-top: 15px; 
+    display: block;
+    width: 100%;
+    text-align: center; 
+    opacity: 0.9;
 }
 
+/* SET 2: Primary Section Header (Biography) - Refined Sleek */
 #main-bio-header.sleek-header {
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
     font-weight: 700;
-    color: #ffffff;
-    display: flex;
+    
+    display: inline-flex; 
     align-items: center;
     gap: 15px;
     margin: 0 0 40px 0;
+
+    background: linear-gradient(to bottom, #ffffff 60%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    letter-spacing: -0.015em; 
 }
 
 #main-bio-header.sleek-header::before {
     content: "";
     width: 3px;
-    height: 35px;
+    height: 1.1em;
     background: var(--accent);
     border-radius: 4px;
+    -webkit-text-fill-color: initial; 
+    flex-shrink: 0;
 }
 
+/* SET 3: Functional Subheaders (Education, etc.) */
 .sub-section {
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem; 
@@ -140,14 +174,17 @@ h1 {
     height: 1px;
     background: var(--accent);
     margin-right: 12px;
+    display: inline-block;
 }
 
+/* 8. CONTENT CARD & SLEEK PARAGRAPHS */
 .glass-card {
     background: var(--glass);
     backdrop-filter: blur(25px);
     border: 1px solid var(--border);
     padding: 50px;
     border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
 p { 
@@ -155,11 +192,26 @@ p {
     margin-bottom: 1.8rem; 
     font-weight: 300; 
     color: #cbd5e1;
+    letter-spacing: 0.01em;
+    text-align: left;
 }
 
-footer { margin-top: 40px; text-align: center; color: var(--text-muted); font-size: 0.7rem; }
+footer { margin-top: 40px; text-align: center; color: var(--text-muted); font-size: 0.7rem; letter-spacing: 1px; }
 
+/* 9. MOBILE FIXES */
 @media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
+    nav {
+        position: relative; 
+        top: 0; left: 0; transform: none;
+        width: 95%; display: flex;
+        justify-content: center;
+        gap: 5px; padding: 8px;
+        margin-bottom: 40px;
+    }
+    nav a { font-size: 0.65rem; padding: 8px 4px; }
     .glass-card { padding: 30px 20px; }
+    h1 { font-size: 2.5rem; letter-spacing: -1px; }
+    .subtitle { letter-spacing: 4px; font-size: 0.8rem; }
+    #main-bio-header.sleek-header { font-size: 1.8rem; margin-bottom: 30px; }
+    .sub-section { font-size: 0.75rem; letter-spacing: 3px; }
 }
