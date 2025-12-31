@@ -12,10 +12,14 @@
 body {
     background-color: var(--bg-main);
     color: var(--text-light);
-    font-family: 'Outfit', sans-serif;
+    /* Inter is the "sleeker" font choice for 2025 */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.8;
     overflow-x: hidden;
 }
+
+/* Import Inter for sleek paragraphs and Playfair for the name */
+@import url('fonts.googleapis.com');
 
 /* Dynamic Mesh Background */
 .mesh-bg {
@@ -25,56 +29,81 @@ body {
     z-index: -1;
 }
 
-.blob { position: absolute; width: 600px; height: 600px; border-radius: 50%; opacity: 0.3; animation: float 20s infinite alternate; }
+.blob { position: absolute; width: 600px; height: 600px; border-radius: 50%; opacity: 0.2; animation: float 20s infinite alternate; }
 .b1 { background: #4f46e5; top: -10%; left: -10%; }
 .b2 { background: #7c3aed; bottom: -10%; right: -10%; animation-delay: -5s; }
 
 @keyframes float { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(50px, 50px) scale(1.1); } }
 
-.container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+.container { max-width: 850px; margin: 0 auto; padding: 40px 20px; }
 
-/* Navigation */
+/* SMALLER, COOLER NAVIGATION */
 nav {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 80px;
-    padding: 20px 0;
-    border-bottom: 1px solid var(--border);
+    display: inline-flex; /* Shrinks the bar to fit content */
+    position: sticky;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* Centers the floating nav */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 10px 30px;
+    border-radius: 100px; /* Modern "pill" shape */
+    border: 1px solid var(--border);
+    gap: 30px;
+    margin-bottom: 60px;
+    z-index: 1000;
 }
 
 nav a {
     color: var(--text-muted);
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.8rem;
-    transition: 0.3s;
+    letter-spacing: 2px;
+    font-size: 0.75rem; /* Smaller font for a cooler look */
+    font-weight: 500;
+    transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-nav a.active, nav a:hover { color: var(--accent); border-bottom: 1px solid var(--accent); }
+nav a.active, nav a:hover { 
+    color: var(--text-light);
+    text-shadow: 0 0 10px var(--accent); /* Subtle "glow" effect */
+}
 
-/* Header */
-header { text-align: center; margin-bottom: 60px; }
-h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 7vw, 5rem); margin: 10px 0; }
-.subtitle { color: var(--text-muted); text-transform: uppercase; letter-spacing: 4px; font-size: 0.9rem; }
+/* SLEEKER HEADER */
+header { text-align: center; margin-bottom: 40px; }
+h1 { 
+    font-family: 'Playfair Display', serif; 
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Slightly smaller than before */
+    font-weight: 700;
+    margin: 5px 0; 
+}
+.subtitle { color: var(--accent); text-transform: uppercase; letter-spacing: 3px; font-size: 0.7rem; font-weight: 600; }
 
-/* Content Card */
+/* REFINED CONTENT CARD */
 .glass-card {
     background: var(--glass);
     backdrop-filter: blur(25px);
     border: 1px solid var(--border);
-    padding: 60px;
+    padding: 50px;
     border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
-/* Uniform Paragraphs */
-p { font-size: 1.15rem; margin-bottom: 2rem; text-align: justify; font-weight: 300; }
+/* SLEEKER PARAGRAPHS */
+p { 
+    font-size: 1.05rem; /* Slightly smaller for a more refined look */
+    margin-bottom: 1.8rem; 
+    text-align: left; /* Justify can sometimes look cluttered on web */
+    font-weight: 300; 
+    color: #cbd5e1; /* Off-white for a softer, more modern feel */
+    letter-spacing: 0.02em; /* Extra breathing room between letters */
+}
 
-footer { margin-top: 50px; text-align: center; color: var(--text-muted); font-size: 0.8rem; letter-spacing: 1px; }
+footer { margin-top: 40px; text-align: center; color: var(--text-muted); font-size: 0.7rem; letter-spacing: 1px; }
 
+/* MOBILE FIXES */
 @media (max-width: 768px) {
     .glass-card { padding: 30px; }
-    p { text-align: left; }
-    nav { gap: 20px; }
+    nav { gap: 15px; padding: 10px 20px; width: 90%; }
+    nav a { font-size: 0.7rem; letter-spacing: 1px; }
 }
