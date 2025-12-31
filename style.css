@@ -131,30 +131,36 @@ h1 {
 /* SET 2: Primary Section Header (Biography) - Refined Sleek */
 #main-bio-header.sleek-header {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 4vw, 2.2rem); /* Dynamic scaling */
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
     font-weight: 700;
     
-    /* Matching "Glass" Gradient */
-    background: linear-gradient(180deg, #ffffff 50%, rgba(255, 255, 255, 0.7) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
-    /* Clean "Non-Touching" Spacing */
-    letter-spacing: -0.01em; 
-    margin: 0 0 40px 0;
-    display: flex;
+    /* FIX: Changed to inline-flex to ensure background-clip works with pseudo-elements */
+    display: inline-flex; 
     align-items: center;
     gap: 15px;
+    margin: 0 0 40px 0;
+
+    /* Gradient Logic */
+    background: linear-gradient(180deg, #ffffff 50%, rgba(255, 255, 255, 0.7) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    letter-spacing: -0.01em; 
 }
 
 /* Matching accented vertical line */
 #main-bio-header.sleek-header::before {
     content: "";
-    width: 3px; /* Slightly thinner for a sleeker look */
-    height: 1.2em; /* Scales perfectly with font size */
+    width: 3px;
+    height: 1.2em;
     background: var(--accent);
     border-radius: 4px;
     opacity: 0.9;
+    
+    /* FIX: This ensures the blue line stays visible while the text is transparent */
+    -webkit-text-fill-color: initial; 
+    flex-shrink: 0;
 }
 
 /* SET 3: Functional Subheaders (Education, etc.) */
