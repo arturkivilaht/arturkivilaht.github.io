@@ -1,4 +1,4 @@
-/* 1. FONT IMPORTS - MUST BE AT THE TOP */
+/* 1. FONT IMPORTS - MUST BE AT THE TOP AND COMPLETE */
 @import url('fonts.googleapis.com');
 
 /* 2. VARIABLES */
@@ -83,84 +83,61 @@ nav a.active, nav a:hover {
     text-shadow: 0 0 10px var(--accent);
 }
 
-/* --- 6. HEADERS & HIERARCHY (SLEEK & STATIC) --- */
-
+/* --- 6. THREE-TIER SLEEK HIERARCHY --- */
 header { text-align: center; margin-bottom: 60px; }
 
-/* The Main Name - Sophisticated & Still */
 h1 { 
     font-family: 'Playfair Display', serif; 
     font-size: clamp(2.5rem, 7vw, 4rem);
     font-weight: 700;
-    margin: 5px 0; 
     color: #ffffff;
-    letter-spacing: -1px;
-    /* Subtle silver depth without a moving gradient */
-    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    letter-spacing: -1.5px;
 }
 
-/* LEVEL 1: THE MAIN SUBTITLE (Musician) */
+/* SET 1: Branding Subtitle (Centered, Airy) */
 .subtitle { 
     color: var(--accent); 
     text-transform: uppercase; 
-    letter-spacing: 6px; 
-    font-size: 1.1rem; 
-    text-align: center; 
+    letter-spacing: 8px; 
+    font-size: 0.9rem; 
+    font-weight: 600; 
+    margin-top: 10px; 
     display: block;
-    font-weight: 600;
-    margin-top: 10px;
     opacity: 0.8;
 }
 
-/* LEVEL 2: THE PRIMARY SLEEK "BIOGRAPHY" HEADER */
+/* SET 2: Primary Section Header (Biography) */
 #main-bio-header.sleek-header {
     font-family: 'Playfair Display', serif;
-    font-size: 2.2rem; 
+    font-size: 2.2rem;
     font-weight: 700;
     color: #ffffff;
-    text-transform: none;
-    letter-spacing: -0.5px; 
-    margin: 0 0 30px 0;
-    padding-bottom: 15px;
-    position: relative;
-    display: block;
+    margin: 0 0 40px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-/* Static Minimalist Accent for Biography */
-#main-bio-header.sleek-header::after {
+#main-bio-header.sleek-header::before {
     content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px; /* Short, fixed-width elegant dash */
-    height: 2px;
+    width: 4px;
+    height: 35px;
     background: var(--accent);
     border-radius: 2px;
-    /* No glow or movement, just a clean professional mark */
 }
 
-/* LEVEL 3: THE SUBHEADERS (Education, Career, etc.) */
-h2:not(#main-bio-header) {
-    font-size: 1rem;
+/* SET 3: Functional Subheaders (Education, etc.) */
+.sub-section {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem; 
     font-weight: 600;
     color: var(--text-muted);
     text-transform: uppercase;
-    letter-spacing: 3px;
-    margin: 45px 0 15px 0;
-    padding-bottom: 8px;
+    letter-spacing: 5px; 
+    margin: 50px 0 15px 0;
+    padding-bottom: 12px;
     border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-}
-
-/* Subtle accent dash for sub-sections */
-h2:not(#main-bio-header)::before {
-    content: "";
-    width: 12px;
-    height: 1px;
-    background: var(--border); /* Muted color to keep focus on bio header */
-    margin-right: 12px;
-    display: inline-block;
+    display: block;
 }
 
 /* 8. CONTENT CARD & SLEEK PARAGRAPHS */
@@ -197,6 +174,7 @@ footer { margin-top: 40px; text-align: center; color: var(--text-muted); font-si
     nav a { font-size: 0.65rem; padding: 8px 4px; }
     .glass-card { padding: 30px 20px; }
     h1 { font-size: 2.2rem; }
-    h2 { font-size: 1.1rem; margin-top: 35px; }
+    #main-bio-header.sleek-header { font-size: 1.8rem; margin-bottom: 30px; }
+    .sub-section { font-size: 0.75rem; letter-spacing: 3px; }
     p { font-size: 1.05rem; }
 }
