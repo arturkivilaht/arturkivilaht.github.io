@@ -73,11 +73,21 @@ nav a.active, nav a:hover {
 header { text-align: center; margin-bottom: 40px; }
 h1 { 
     font-family: 'Playfair Display', serif; 
-    font-size: clamp(2rem, 5vw, 3.5rem); /* Slightly smaller than before */
+    font-size: clamp(2rem, 5vw, 3.5rem); 
     font-weight: 700;
     margin: 5px 0; 
+    background: linear-gradient(#fff, #999);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-.subtitle { color: var(--accent); text-transform: uppercase; letter-spacing: 3px; font-size: 0.7rem; font-weight: 600; }
+.subtitle { 
+    color: var(--accent); 
+    text-transform: uppercase; 
+    letter-spacing: 4px; /* More "breathing room" */
+    font-size: 1.1rem;    /* Bigger and more professional */
+    font-weight: 600; 
+    margin-top: 10px;
+}
 
 /* REFINED CONTENT CARD */
 .glass-card {
