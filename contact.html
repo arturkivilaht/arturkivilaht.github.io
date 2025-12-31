@@ -5,29 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Artur Kivilaht</title>
     <link rel="icon" type="image/png" href="favicon.png?v=2">
-    <!-- Main Stylesheet (Handles fonts via @import) -->
+    <!-- Link to your Green & Parchment CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- 1. DYNAMIC MESH BACKGROUND -->
     <div class="mesh-bg">
         <div class="blob b1"></div>
         <div class="blob b2"></div>
     </div>
+
+    <!-- 2. NAVIGATION PILL (Moved outside container for stability) -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="news.html">News</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
     
     <div class="container">
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="news.html">News</a>
-            <a href="contact.html" class="active">Contact</a>
-        </nav>
-        
+        <!-- 3. HEADER -->
         <header>
             <h1>Get in Touch</h1>
+            <p class="subtitle">Ottawa, Canada</p>
         </header>
 
+        <!-- 4. CONTACT CONTENT -->
         <main class="glass-card">
-            <p>To connect, please email me at:</p>
-            <p><strong>arturkivilaht@proton.me</strong></p>
+            <h3 class="sub-section">Booking & Inquiries</h3>
+            <p>For music bookings, policy consultations, or general inquiries, please connect via email:</p>
+            
+            <p>
+                <a href="mailto:arturkivilaht@proton.me" style="color: var(--accent); font-weight: 700; text-decoration: none; font-size: 1.2rem;">
+                    arturkivilaht@proton.me
+                </a>
+            </p>
+            
+            <footer style="margin-top: 60px;">&copy; 2025 Artur Kivilaht</footer>
         </main>
     </div>
 </body>
