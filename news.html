@@ -5,30 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News | Artur Kivilaht</title>
     <link rel="icon" type="image/png" href="favicon.png?v=2">
-    <!-- Main Stylesheet (Handles fonts via @import) -->
+    <!-- Link to your Green & Parchment CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- 1. DYNAMIC MESH BACKGROUND -->
     <div class="mesh-bg">
         <div class="blob b1"></div>
         <div class="blob b2"></div>
     </div>
+
+    <!-- 2. NAVIGATION PILL (Moved outside container for stability) -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="news.html" class="active">News</a>
+        <a href="contact.html">Contact</a>
+    </nav>
     
     <div class="container">
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="news.html" class="active">News</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-        
+        <!-- 3. HEADER -->
         <header>
             <h1>Latest News</h1>
+            <p class="subtitle">Updates & Events</p>
         </header>
 
+        <!-- 4. NEWS CONTENT -->
         <main class="glass-card">
-            <p><strong>December 2025:</strong> Currently exploring the trad music scene in Ottawa. Upcoming 2026 events are in development.</p>
+            <div class="news-item">
+                <h3 class="sub-section">Current Status</h3>
+                <p><strong>December 2025:</strong> Currently exploring the trad music scene in Ottawa. Upcoming 2026 events are in development and will be announced here soon.</p>
+            </div>
             
-            <footer>Last Updated: Dec 2025</footer>
+            <footer>Last Updated: December 2025</footer>
         </main>
     </div>
 </body>
