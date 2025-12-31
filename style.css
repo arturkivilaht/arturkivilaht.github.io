@@ -96,29 +96,56 @@ h1 {
     -webkit-text-fill-color: transparent;
 }
 
+/* --- LEVEL 1: THE MAIN SUBTITLE (Musician) --- */
 .subtitle { 
     color: var(--accent); 
     text-transform: uppercase; 
-    letter-spacing: 6px;    /* Wider spacing for a premium feel */
-    font-size: 1.2rem;      /* Larger than standard text */
-    font-weight: 600; 
-    margin-top: 15px;       /* Space between name and subtitle */
-    text-align: center;     /* Centers it perfectly under your name */
+    letter-spacing: 6px; 
+    font-size: 1.2rem; 
+    text-align: center; 
     display: block;
-    text-shadow: 0 0 15px rgba(99, 102, 241, 0.4); /* Subtle indigo glow */
-    opacity: 0.9;
+    text-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+    margin-bottom: 20px;
 }
 
-/* 7. NEW: SUBHEADERS (h2) */
+/* --- LEVEL 2: THE PRIMARY "BIOGRAPHY" HEADER --- */
+/* This looks like a big, bold section start */
+#main-bio-header {
+    font-family: 'Playfair Display', serif; /* Matching your Name's font */
+    font-size: 2rem;
+    color: #ffffff;
+    text-transform: none; /* Classy sentence case */
+    letter-spacing: 0px;
+    border-bottom: 2px solid var(--accent); /* Thicker, colored line */
+    padding-bottom: 10px;
+    margin: 0 0 40px 0;
+    display: block;
+}
+#main-bio-header::before { display: none; } /* Removes the dash for this one */
+
+/* --- LEVEL 3: THE SUBHEADERS (Education, Career, etc.) --- */
+/* These look like clean, professional sub-points */
 h2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    color: var(--accent);
+    color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 3px;
     margin: 45px 0 15px 0;
+    padding-bottom: 8px;
     border-bottom: 1px solid var(--border);
-    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* Adds the cool accent dash ONLY to the subheaders */
+h2:not(#main-bio-header)::before {
+    content: "";
+    width: 15px;
+    height: 1px;
+    background: var(--accent);
+    margin-right: 12px;
+    display: inline-block;
 }
 
 /* 8. CONTENT CARD & SLEEK PARAGRAPHS */
