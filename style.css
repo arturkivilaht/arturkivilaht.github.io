@@ -1,17 +1,19 @@
-/* 1. FONT IMPORTS */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600&family=Playfair+Display:wght@700&display=swap');
+/* 
+   THEME: Green, Parchment & Black
+   FONTS: Times New Roman (Headers), Helvetica (Body)
+*/
 
-/* 2. VARIABLES */
+/* 1. VARIABLES */
 :root {
-    --bg-main: #0a0a12; 
-    --accent: #6366f1; 
-    --text-light: #f8fafc;
-    --text-muted: #94a3b8;
-    --glass: rgba(255, 255, 255, 0.03);
-    --border: rgba(255, 255, 255, 0.08);
+    --bg-main: #fcfaf2;        /* Parchment background */
+    --accent: #1b4332;         /* Deep Forest Green */
+    --text-dark: #0a0a0a;      /* Rich Black */
+    --text-muted: #4b5563;     /* Muted Charcoal for sub-labels */
+    --glass: rgba(255, 255, 255, 0.4); /* Stationery glass effect */
+    --border: rgba(27, 67, 50, 0.15);  /* Subtle Forest Green border */
 }
 
-/* 3. RESET & BASE */
+/* 2. RESET & BASE */
 * { 
     margin: 0; 
     padding: 0; 
@@ -24,22 +26,23 @@ html {
 
 body {
     background-color: var(--bg-main);
-    color: var(--text-light);
-    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    /* Helvetica Body Font */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.8;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
 }
 
-/* 4. DYNAMIC MESH BACKGROUND */
+/* 3. DYNAMIC MESH BACKGROUND (Green Blobs) */
 .mesh-bg {
     position: fixed;
     top: 0; 
     left: 0; 
     width: 100%; 
     height: 100%;
-    filter: blur(120px);
+    filter: blur(100px);
     z-index: -1;
     pointer-events: none;
 }
@@ -49,12 +52,12 @@ body {
     width: 600px; 
     height: 600px; 
     border-radius: 50%; 
-    opacity: 0.2; 
+    opacity: 0.15; 
     animation: float 20s infinite alternate; 
 }
 
-.b1 { background: #4f46e5; top: -10%; left: -10%; }
-.b2 { background: #7c3aed; bottom: -10%; right: -10%; animation-delay: -5s; }
+.b1 { background: #52b788; top: -10%; left: -10%; }
+.b2 { background: #2d6a4f; bottom: -10%; right: -10%; animation-delay: -5s; }
 
 @keyframes float { 
     0% { transform: translate(0,0) scale(1); } 
@@ -64,17 +67,17 @@ body {
 .container { 
     max-width: 850px; 
     margin: 0 auto; 
-    padding: 100px 20px 40px 20px; /* Increased top padding for sticky nav space */
+    padding: 120px 20px 40px 20px;
 }
 
-/* 5. NAVIGATION PILL */
+/* 4. NAVIGATION PILL */
 nav {
     display: flex;
-    position: fixed; /* Changed to fixed to ensure it stays during scroll */
+    position: fixed; 
     top: 25px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(10, 10, 18, 0.6); /* Darker base for better legibility */
+    background: rgba(252, 250, 242, 0.9); 
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     padding: 8px 24px;
@@ -83,6 +86,7 @@ nav {
     gap: 10px;
     z-index: 1000;
     white-space: nowrap;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 nav a {
@@ -91,17 +95,16 @@ nav a {
     text-transform: uppercase;
     letter-spacing: 1.5px;
     font-size: 0.7rem;
-    font-weight: 600;
+    font-weight: 700;
     padding: 8px 16px;
     transition: all 0.3s ease;
 }
 
 nav a:hover, nav a.active { 
-    color: var(--text-light);
-    text-shadow: 0 0 15px var(--accent);
+    color: var(--accent);
 }
 
-/* 6. TYPOGRAPHY HIERARCHY */
+/* 5. TYPOGRAPHY HIERARCHY */
 header { 
     text-align: center; 
     margin-bottom: 60px; 
@@ -111,17 +114,13 @@ header {
 }
 
 h1 { 
-    font-family: 'Playfair Display', serif; 
+    /* Times New Roman Header */
+    font-family: 'Times New Roman', Times, serif; 
     font-size: clamp(2.5rem, 8vw, 4.5rem);
     font-weight: 700;
-    color: var(--text-light); /* Fallback */
-    background: linear-gradient(180deg, #ffffff 50%, #cbd5e1 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -0.02em; 
+    color: var(--text-dark);
+    letter-spacing: -0.01em; 
     line-height: 1.1;
-    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
     text-wrap: balance;
 }
 
@@ -131,19 +130,16 @@ h1 {
     letter-spacing: 6px; 
     font-size: 0.85rem; 
     font-weight: 600; 
-    margin-top: 20px; 
+    margin-top: 15px; 
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
 }
 
-/* 7. BIOGRAPHY & SECTIONS */
+/* 6. BIOGRAPHY & SECTIONS */
 #main-bio-header.sleek-header {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Times New Roman', Times, serif;
     font-size: clamp(1.8rem, 5vw, 2.2rem);
     font-weight: 700;
-    color: var(--text-light); /* Fallback */
-    background: linear-gradient(180deg, #ffffff 50%, #cbd5e1 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--text-dark);
     display: flex; 
     align-items: center;
     gap: 15px;
@@ -158,12 +154,12 @@ h1 {
     border-radius: 10px;
     flex-shrink: 0;
     display: inline-block;
-    -webkit-text-fill-color: initial; /* Resets the transparent fill from parent */
 }
 
 .sub-section {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 0.8rem; 
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 4px; 
@@ -182,22 +178,22 @@ h1 {
     margin-right: 12px;
 }
 
-/* 8. CONTENT CARD */
+/* 7. CONTENT CARD */
 .glass-card {
     background: var(--glass);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     border: 1px solid var(--border);
     padding: clamp(25px, 5vw, 50px);
-    border-radius: 24px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    border-radius: 4px; /* Paper/Stationery corners */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
 }
 
 p { 
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     margin-bottom: 1.8rem; 
-    font-weight: 300; 
-    color: #cbd5e1;
+    font-weight: 400; 
+    color: #1a1a1a;
     text-align: left;
 }
 
@@ -209,22 +205,22 @@ footer {
     letter-spacing: 1px;
 }
 
-/* 9. RESPONSIVE DESIGN */
+/* 8. RESPONSIVE DESIGN */
 @media (max-width: 768px) {
     nav {
-        width: 90%;
+        width: 92%;
         justify-content: center;
         padding: 6px 10px;
     }
     
     nav a {
-        font-size: 0.65rem;
-        padding: 8px 10px;
+        font-size: 0.6rem;
+        padding: 8px 8px;
         letter-spacing: 1px;
     }
 
     .container {
-        padding-top: 80px;
+        padding-top: 100px;
     }
 
     .blob {
