@@ -1,6 +1,7 @@
 /* 
    THEME: Green, Parchment & Black
    FONTS: Times New Roman (Headers), Helvetica (Body)
+   UPDATED: December 31, 2025
 */
 
 /* 1. VARIABLES */
@@ -8,26 +9,18 @@
     --bg-main: #fcfaf2;        /* Parchment background */
     --accent: #1b4332;         /* Deep Forest Green */
     --text-dark: #0a0a0a;      /* Rich Black */
-    --text-muted: #4b5563;     /* Muted Charcoal for sub-labels */
-    --glass: rgba(255, 255, 255, 0.4); /* Stationery glass effect */
-    --border: rgba(27, 67, 50, 0.15);  /* Subtle Forest Green border */
+    --text-muted: #4b5563;     /* Muted Charcoal */
+    --glass: rgba(255, 255, 255, 0.4); 
+    --border: rgba(27, 67, 50, 0.15);  
 }
 
 /* 2. RESET & BASE */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-}
-
-html {
-    scroll-behavior: smooth;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
     background-color: var(--bg-main);
     color: var(--text-dark);
-    /* Helvetica Body Font */
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.8;
     overflow-x: hidden;
@@ -38,10 +31,7 @@ body {
 /* 3. DYNAMIC MESH BACKGROUND (Green Blobs) */
 .mesh-bg {
     position: fixed;
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
     filter: blur(100px);
     z-index: -1;
     pointer-events: none;
@@ -52,8 +42,9 @@ body {
     width: 600px; 
     height: 600px; 
     border-radius: 50%; 
-    opacity: 0.15; 
+    opacity: 0.15; /* Base visibility for mobile */
     animation: float 20s infinite alternate; 
+    transition: opacity 0.5s ease, background 0.5s ease;
 }
 
 .b1 { background: #52b788; top: -10%; left: -10%; }
@@ -100,28 +91,17 @@ nav a {
     transition: all 0.3s ease;
 }
 
-nav a:hover, nav a.active { 
-    color: var(--accent);
-}
+nav a:hover, nav a.active { color: var(--accent); }
 
 /* 5. TYPOGRAPHY HIERARCHY */
-header { 
-    text-align: center; 
-    margin-bottom: 60px; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+header { text-align: center; margin-bottom: 60px; display: flex; flex-direction: column; align-items: center; }
 
 h1 { 
-    /* Times New Roman Header */
     font-family: 'Times New Roman', Times, serif; 
     font-size: clamp(2.5rem, 8vw, 4.5rem);
     font-weight: 700;
     color: var(--text-dark);
-    letter-spacing: -0.01em; 
     line-height: 1.1;
-    text-wrap: balance;
 }
 
 .subtitle { 
@@ -131,7 +111,6 @@ h1 {
     font-size: 0.85rem; 
     font-weight: 600; 
     margin-top: 15px; 
-    font-family: 'Helvetica Neue', Helvetica, sans-serif;
 }
 
 /* 6. BIOGRAPHY & SECTIONS */
@@ -139,43 +118,31 @@ h1 {
     font-family: 'Times New Roman', Times, serif;
     font-size: clamp(1.8rem, 5vw, 2.2rem);
     font-weight: 700;
-    color: var(--text-dark);
     display: flex; 
     align-items: center;
     gap: 15px;
-    margin: 0 0 30px 0;
+    margin-bottom: 30px;
 }
 
 #main-bio-header.sleek-header::before {
-    content: "";
-    width: 4px;
-    height: 0.9em;
-    background: var(--accent);
-    border-radius: 10px;
-    flex-shrink: 0;
-    display: inline-block;
+    content: ""; width: 4px; height: 0.9em;
+    background: var(--accent); border-radius: 10px;
 }
 
 .sub-section {
-    font-family: 'Helvetica Neue', Helvetica, sans-serif;
-    font-size: 0.8rem; 
-    font-weight: 700;
+    font-size: 0.8rem; font-weight: 700;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 4px; 
     margin: 60px 0 20px 0;
     padding-bottom: 12px;
     border-bottom: 1px solid var(--border);
-    display: flex; 
-    align-items: center;
+    display: flex; align-items: center;
 }
 
 .sub-section::before {
-    content: "";
-    width: 20px;
-    height: 1px;
-    background: var(--accent);
-    margin-right: 12px;
+    content: ""; width: 20px; height: 1px;
+    background: var(--accent); margin-right: 12px;
 }
 
 /* 7. CONTENT CARD */
@@ -185,46 +152,34 @@ h1 {
     -webkit-backdrop-filter: blur(25px);
     border: 1px solid var(--border);
     padding: clamp(25px, 5vw, 50px);
-    border-radius: 4px; /* Paper/Stationery corners */
+    border-radius: 4px; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.03);
 }
 
-p { 
-    font-size: 1.05rem;
-    margin-bottom: 1.8rem; 
-    font-weight: 400; 
-    color: #1a1a1a;
-    text-align: left;
-}
+p { font-size: 1.05rem; margin-bottom: 1.8rem; color: #1a1a1a; }
+footer { margin: 80px 0 40px 0; text-align: center; color: var(--text-muted); font-size: 0.75rem; }
 
-footer { 
-    margin: 80px 0 40px 0; 
-    text-align: center; 
-    color: var(--text-muted); 
-    font-size: 0.75rem; 
-    letter-spacing: 1px;
-}
-
-/* 8. RESPONSIVE DESIGN */
+/* 8. MOBILE RESPONSIVE (Adjustments up to 768px) */
 @media (max-width: 768px) {
-    nav {
-        width: 92%;
-        justify-content: center;
-        padding: 6px 10px;
+    nav { width: 92%; justify-content: center; }
+    nav a { font-size: 0.6rem; padding: 8px 8px; }
+    .container { padding-top: 100px; }
+    .blob { width: 300px; height: 300px; }
+}
+
+/* 9. DESKTOP BOOST (Stronger Green for screens 1024px+) */
+@media (min-width: 1024px) {
+    .blob { 
+        opacity: 0.35; /* Increased from 0.15 for better desktop visibility */
+        width: 800px;  /* Larger blobs for computer monitors */
+        height: 800px;
     }
     
-    nav a {
-        font-size: 0.6rem;
-        padding: 8px 8px;
-        letter-spacing: 1px;
-    }
-
-    .container {
-        padding-top: 100px;
-    }
-
-    .blob {
-        width: 300px;
-        height: 300px;
+    /* Richer green tones specifically for desktop monitors */
+    .b1 { background: #40916c; } 
+    .b2 { background: #1b4332; } 
+    
+    .mesh-bg {
+        filter: blur(140px); /* Smoother blur for higher resolution screens */
     }
 }
