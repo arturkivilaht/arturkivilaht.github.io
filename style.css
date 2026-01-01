@@ -1,17 +1,17 @@
 /* 
-   THEME: Green, Parchment & Black
+   THEME: Deep Green, Dark Parchment & Black
    FONTS: Helvetica (Specific Headers), Times New Roman (Biography Headers)
    UPDATED: December 31, 2025
 */
 
 /* 1. VARIABLES */
 :root {
-    --bg-main: #fcfaf2;        /* Parchment background */
-    --accent: #1b4332;         /* Deep Forest Green */
-    --text-dark: #0a0a0a;      /* Rich Black */
-    --text-muted: #4b5563;     /* Muted Charcoal */
-    --glass: rgba(255, 255, 255, 0.4); 
-    --border: rgba(27, 67, 50, 0.15);  
+    --bg-main: #f1e9d2;        /* Darker Aged Parchment */
+    --accent: #0b2b26;         /* Darker Jungle Green */
+    --text-dark: #050505;      /* Near Black */
+    --text-muted: #374151;     /* Dark Charcoal */
+    --glass: rgba(255, 255, 255, 0.35); /* Slightly more opaque for darker bg */
+    --border: rgba(11, 43, 38, 0.2);    /* Dark Green border */
 }
 
 /* 2. RESET & BASE */
@@ -21,7 +21,6 @@ html { scroll-behavior: smooth; }
 body {
     background-color: var(--bg-main);
     color: var(--text-dark);
-    /* Default Body Font: Helvetica */
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.8;
     overflow-x: hidden;
@@ -29,7 +28,7 @@ body {
     min-height: 100vh;
 }
 
-/* 3. DYNAMIC MESH BACKGROUND */
+/* 3. DYNAMIC MESH BACKGROUND (Darker Green Blobs) */
 .mesh-bg {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -43,13 +42,14 @@ body {
     width: 600px; 
     height: 600px; 
     border-radius: 50%; 
-    opacity: 0.15; 
+    opacity: 0.2; /* Slightly higher base visibility */
     animation: float 20s infinite alternate; 
     transition: opacity 0.5s ease, background 0.5s ease;
 }
 
-.b1 { background: #52b788; top: -10%; left: -10%; }
-.b2 { background: #2d6a4f; bottom: -10%; right: -10%; animation-delay: -5s; }
+/* Primary dark green blobs */
+.b1 { background: #163832; top: -10%; left: -10%; }
+.b2 { background: #0b2b26; bottom: -10%; right: -10%; animation-delay: -5s; }
 
 @keyframes float { 
     0% { transform: translate(0,0) scale(1); } 
@@ -62,14 +62,14 @@ body {
     padding: 120px 20px 40px 20px;
 }
 
-/* 4. NAVIGATION PILL (Helvetica per request) */
+/* 4. NAVIGATION PILL */
 nav {
     display: flex;
     position: fixed; 
     top: 25px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(252, 250, 242, 0.9); 
+    background: rgba(241, 233, 210, 0.95); /* Darker parchment for nav */
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     padding: 8px 24px;
@@ -78,11 +78,10 @@ nav {
     gap: 10px;
     z-index: 1000;
     white-space: nowrap;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
 nav a {
-    /* Set Contact and News links to Helvetica */
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: var(--text-muted);
     text-decoration: none;
@@ -100,7 +99,6 @@ nav a:hover, nav a.active { color: var(--accent); }
 header { text-align: center; margin-bottom: 60px; display: flex; flex-direction: column; align-items: center; }
 
 h1 { 
-    /* Set "Artur Kivilaht" to Helvetica per request */
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
     font-size: clamp(2.5rem, 8vw, 4.5rem);
     font-weight: 700;
@@ -116,10 +114,9 @@ h1 {
     font-size: 0.85rem; 
     font-weight: 600; 
     margin-top: 15px; 
-    font-family: 'Helvetica Neue', Helvetica, sans-serif;
 }
 
-/* 6. BIOGRAPHY HEADERS (Keeping Times New Roman for professional contrast) */
+/* 6. BIOGRAPHY HEADERS */
 #main-bio-header.sleek-header {
     font-family: 'Times New Roman', Times, serif;
     font-size: clamp(1.8rem, 5vw, 2.2rem);
@@ -136,7 +133,6 @@ h1 {
 }
 
 .sub-section {
-    font-family: 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 0.8rem; font-weight: 700;
     color: var(--text-muted);
     text-transform: uppercase;
@@ -160,10 +156,10 @@ h1 {
     border: 1px solid var(--border);
     padding: clamp(25px, 5vw, 50px);
     border-radius: 4px; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
 }
 
-p { font-size: 1.05rem; margin-bottom: 1.8rem; color: #1a1a1a; }
+p { font-size: 1.05rem; margin-bottom: 1.8rem; color: #111; }
 footer { margin: 80px 0 40px 0; text-align: center; color: var(--text-muted); font-size: 0.75rem; }
 
 /* 8. MOBILE RESPONSIVE */
@@ -174,14 +170,16 @@ footer { margin: 80px 0 40px 0; text-align: center; color: var(--text-muted); fo
     .blob { width: 300px; height: 300px; }
 }
 
-/* 9. DESKTOP BOOST (Enhanced green tinge for large screens) */
+/* 9. DESKTOP BOOST (Deeper Green for Large Screens) */
 @media (min-width: 1024px) {
     .blob { 
-        opacity: 0.35; 
-        width: 800px;  
-        height: 800px;
+        opacity: 0.45; /* Strengthened from 0.35 to stand out on dark parchment */
+        width: 900px;  
+        height: 900px;
     }
-    .b1 { background: #40916c; } 
-    .b2 { background: #1b4332; } 
-    .mesh-bg { filter: blur(140px); }
+    
+    .b1 { background: #163832; } 
+    .b2 { background: #051f20; } /* Even darker green for computer monitors */
+    
+    .mesh-bg { filter: blur(150px); }
 }
