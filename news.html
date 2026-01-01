@@ -3,37 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    
     <title>Latest News | Artur Kivilaht - Music</title>
     
-    <!-- SEO Meta Tags (Focused on Guitarist Brand) -->
-    <meta name="description" content="Stay updated on Artur Kivilaht's latest music performances and upcoming 2026 events.">
+    <meta name="description" content="Stay updated on Artur Kivilaht's latest music performances and upcoming 2026 events in Ottawa.">
     
-    <!-- Best Practice 2026: Points to the specific page URL -->
+    <!-- REQUIRED 2026: Absolute URL with HTTPS and file path -->
     <link rel="canonical" href="arturkivilaht.com">
     
-    <!-- Social Media Tags (Open Graph) -->
+    <!-- Social Media Tags -->
     <meta property="og:title" content="Latest News | Artur Kivilaht">
     <meta property="og:description" content="Updates on guitar performances and upcoming 2026 music events in Ottawa.">
     <meta property="og:type" content="website">
     
-    <!-- Best Practice 2026: Points to the specific page URL -->
+    <!-- REQUIRED 2026: Absolute URL with HTTPS and file path -->
     <meta property="og:url" content="arturkivilaht.com">
+    
+    <!-- REQUIRED 2026: Link to a specific image file for sharing -->
+    <meta property="og:image" content="arturkivilaht.com">
 
     <link rel="icon" type="image/png" href="favicon.png?v=2">
-    <!-- Link to your Green & Parchment CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- 1. DYNAMIC MESH BACKGROUND -->
-    <div class="mesh-bg">
+    <div class="mesh-bg" aria-hidden="true">
         <div class="blob b1"></div>
         <div class="blob b2"></div>
     </div>
 
-    <!-- 2. NAVIGATION PILL (Restored link name to Contact) -->
+    <!-- 2. NAVIGATION PILL -->
     <nav>
         <a href="index.html">Home</a>
-        <a href="news.html" class="active">News</a>
+        <a href="news.html" class="active" aria-current="page">News</a>
         <a href="contact.html">Contact</a>
     </nav>
     
@@ -44,14 +47,16 @@
             <p class="subtitle">Updates & Events</p>
         </header>
 
-        <!-- 4. NEWS CONTENT (Original Text Preserved) -->
+        <!-- 4. NEWS CONTENT -->
         <main class="glass-card">
-            <div class="news-item">
-                <h3 class="sub-section">Current Status</h3>
+            <article class="news-item">
+                <h2 class="sub-section">Current Status</h2>
                 <p><strong>December 2025:</strong> Currently exploring the trad and fiddle music scene in Ottawa. Upcoming 2026 events are in development.</p>
-            </div>
+            </article>
             
-            <footer>Last Updated: December 2025</footer>
+            <footer class="last-updated">
+                <small>Last Updated: December 2025</small>
+            </footer>
         </main>
     </div>
 </body>
