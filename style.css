@@ -1,13 +1,13 @@
 /* 
    THEME: Deep Blue, Parchment & Black
-   UPDATED: January 4, 2026 - Enhanced Blue Presence & Fixed Layout Centering
+   UPDATED: January 4, 2026 - Perfectly Centered Sub-Headers
 */
 
 :root {
     color-scheme: light; 
     --bg-main: #fcfaf2;        
-    --accent: #1e3a5f;         /* Midnight Navy */
-    --accent-light: #4682b4;   /* Steel Blue */
+    --accent: #1e3a5f;         
+    --accent-light: #4682b4;   
     --text-dark: #0a0a0a;      
     --text-muted: #4b5563;     
     --glass: rgba(255, 255, 255, 0.4); 
@@ -28,7 +28,7 @@ body {
     min-height: 100vh;
 }
 
-/* 3. DYNAMIC MESH BACKGROUND - Enhanced Blue Presence */
+/* 3. DYNAMIC MESH BACKGROUND */
 .mesh-bg {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -43,27 +43,27 @@ body {
     width: 700px; 
     height: 700px; 
     border-radius: 50%; 
-    opacity: 0.25; /* INCREASED: Blue is now more present */
+    opacity: 0.25; 
     animation: float 20s infinite alternate; 
     will-change: transform;
 }
 
-.b1 { background: #4682b4; top: -15%; left: -10%; } /* Steel Blue */
-.b2 { background: #1e3a5f; bottom: -15%; right: -10%; animation-delay: -5s; } /* Midnight Navy */
+.b1 { background: #4682b4; top: -15%; left: -10%; } 
+.b2 { background: #1e3a5f; bottom: -15%; right: -10%; animation-delay: -5s; }
 
 @keyframes float { 
     0% { transform: translate(0,0) scale(1); } 
     100% { transform: translate(60px, 60px) scale(1.15); } 
 }
 
-/* CONTAINER - Fixed for Centering across all pages */
+/* CONTAINER */
 .container { 
     max-width: 950px; 
     margin: 0 auto; 
     padding: 140px 20px 40px 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Ensures content centers horizontally */
+    align-items: center; 
 }
 
 /* 4. NAVIGATION PILL */
@@ -97,12 +97,13 @@ nav a {
 
 nav a:hover, nav a.active { color: var(--accent); }
 
-/* 5. TYPOGRAPHY */
+/* 5. TYPOGRAPHY - Centered Subtitles */
 h1 { 
     font-family: 'Helvetica Neue', Helvetica, sans-serif; 
     font-size: clamp(2.2rem, 6vw, 3.5rem);
     font-weight: 700;
     color: var(--text-dark);
+    text-align: center; /* Ensures header text is centered */
 }
 
 .subtitle { 
@@ -112,6 +113,7 @@ h1 {
     font-size: 0.85rem; 
     font-weight: 600; 
     margin-top: 8px;
+    text-align: center; /* UPDATED: Centers "Guitarist", "Ottawa, Canada", etc. */
 }
 
 /* 6. BIOGRAPHY HEADERS */
@@ -131,7 +133,7 @@ h1 {
 .sub-section {
     font-family: 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 0.75rem; font-weight: 700;
-    color: var(--accent-light); /* Blue tone sub-sections */
+    color: var(--accent-light); 
     text-transform: uppercase;
     letter-spacing: 3px; 
     margin-top: 40px;
@@ -140,7 +142,7 @@ h1 {
     display: flex; align-items: center;
 }
 
-/* 7. CONTENT CARD - Centered Fix */
+/* 7. CONTENT CARD */
 .glass-card {
     background: var(--glass);
     backdrop-filter: blur(25px);
@@ -148,7 +150,7 @@ h1 {
     border: 1px solid var(--border);
     padding: clamp(20px, 5vw, 50px);
     border-radius: 12px;
-    width: 100%; /* Ensures it fills the container while staying centered */
+    width: 100%; 
 }
 
 p { font-size: 1.05rem; margin-bottom: 1.5rem; color: #1a1a1a; }
@@ -178,6 +180,9 @@ footer { margin: 60px 0; text-align: center; color: var(--text-muted); font-size
 
 .header-text-box {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* UPDATED: Centers the name and title in the split layout */
 }
 
 /* MOBILE ADAPTATION */
