@@ -1,14 +1,12 @@
 /* 
    THEME: Green, Parchment & Black
    FONTS: Helvetica (Specific Headers), Times New Roman (Biography Headers)
-   UPDATED: January 4, 2026 - Added Hero Section Integration
+   UPDATED: January 4, 2026 - Fixed Hero Zoom & Vertical Image Handling
 */
 
 /* 1. VARIABLES */
 :root {
-    /* FORCES THE BROWSER TO RENDER IN LIGHT MODE */
     color-scheme: light; 
-    
     --bg-main: #fcfaf2;        /* Parchment background */
     --accent: #1b4332;         /* Deep Forest Green */
     --text-dark: #0a0a0a;      /* Rich Black */
@@ -31,15 +29,15 @@ body {
     min-height: 100vh;
 }
 
-/* 3. DYNAMIC MESH BACKGROUND (Optimized for Mobile) */
+/* 3. DYNAMIC MESH BACKGROUND */
 .mesh-bg {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
     filter: blur(80px);
-    -webkit-filter: blur(80px); /* Safari Fix */
+    -webkit-filter: blur(80px);
     z-index: -1;
     pointer-events: none;
-    transform: translateZ(0); /* Hardware acceleration */
+    transform: translateZ(0);
 }
 
 .blob { 
@@ -47,7 +45,7 @@ body {
     width: 600px; 
     height: 600px; 
     border-radius: 50%; 
-    opacity: 0.18; /* Slightly boosted for visibility */
+    opacity: 0.18;
     animation: float 20s infinite alternate; 
     transition: opacity 0.5s ease;
     will-change: transform;
@@ -64,7 +62,7 @@ body {
 .container { 
     max-width: 850px; 
     margin: 0 auto; 
-    padding: 40px 20px 40px 20px; /* Reduced top padding as Hero handles the spacing now */
+    padding: 40px 20px 40px 20px;
 }
 
 /* 4. NAVIGATION PILL */
@@ -76,7 +74,7 @@ nav {
     transform: translateX(-50%);
     background: rgba(252, 250, 242, 0.8); 
     backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px); /* Safari Fix */
+    -webkit-backdrop-filter: blur(15px);
     padding: 8px 24px;
     border-radius: 100px;
     border: 1px solid var(--border);
@@ -105,13 +103,13 @@ h1 {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
     font-size: clamp(2.5rem, 8vw, 4.5rem);
     font-weight: 700;
-    color: white; /* Changed to white for the Hero overlay */
+    color: white; 
     line-height: 1.1;
     letter-spacing: -0.02em;
 }
 
 .subtitle { 
-    color: #52b788; /* Slightly lighter green for readability on dark photo overlay */
+    color: #52b788; 
     text-transform: uppercase; 
     letter-spacing: 6px; 
     font-size: 0.85rem; 
@@ -156,7 +154,7 @@ h1 {
 .glass-card {
     background: var(--glass);
     backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px); /* Safari Fix */
+    -webkit-backdrop-filter: blur(25px);
     border: 1px solid var(--border);
     padding: clamp(25px, 5vw, 50px);
     border-radius: 4px; 
@@ -171,7 +169,7 @@ footer { margin: 80px 0 40px 0; text-align: center; color: var(--text-muted); fo
     nav { width: 92%; justify-content: center; top: 15px; }
     nav a { font-size: 0.6rem; padding: 8px 8px; }
     .blob { width: 350px; height: 350px; }
-    .hero-section { height: 50vh; }
+    .hero-section { height: 60vh; } /* Taller on mobile for headshots */
 }
 
 /* 9. DESKTOP BOOST */
@@ -186,16 +184,17 @@ footer { margin: 80px 0 40px 0; text-align: center; color: var(--text-muted); fo
     .mesh-bg { filter: blur(140px); -webkit-filter: blur(140px); }
 }
 
-/* 10. HERO SECTION STYLES */
+/* 10. HERO SECTION STYLES - FIXED FOR HEADSHOTS */
 .hero-section {
     position: relative;
     width: 100%;
-    height: 70vh; /* Adjust height as needed */
+    height: 70vh; 
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-color: var(--accent); /* Fallback color */
+    /* Matches your theme to fill any "empty" space from zooming out */
+    background-color: var(--accent); 
 }
 
 .hero-image-container {
@@ -210,8 +209,10 @@ footer { margin: 80px 0 40px 0; text-align: center; color: var(--text-muted); fo
 .hero-photo {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
+    /* SWITCHED FROM COVER TO CONTAIN: This shows the whole headshot */
+    object-fit: contain; 
+    /* Ensures the face is centered horizontally */
+    object-position: center center; 
 }
 
 .hero-overlay {
@@ -220,8 +221,8 @@ footer { margin: 80px 0 40px 0; text-align: center; color: var(--text-muted); fo
     left: 0;
     width: 100%;
     height: 100%;
-    /* Gradient goes from clear at top to dark at bottom to ensure text is readable */
-    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
+    /* Adds a vignette to make sure white text is readable regardless of image zoom */
+    background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
 }
 
 .hero-text-overlay {
@@ -229,5 +230,5 @@ footer { margin: 80px 0 40px 0; text-align: center; color: var(--text-muted); fo
     z-index: 2;
     text-align: center;
     padding: 20px;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    text-shadow: 0 4px 15px rgba(0,0,0,0.6);
 }
