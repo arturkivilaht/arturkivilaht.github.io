@@ -1,7 +1,7 @@
 /* 
    THEME: Green, Parchment & Black
    FONTS: Helvetica (Specific Headers), Times New Roman (Biography Headers)
-   UPDATED: December 31, 2025 - Forced Light Mode & Safari Fixes
+   UPDATED: January 4, 2026 - Added Hero Section Integration
 */
 
 /* 1. VARIABLES */
@@ -64,7 +64,7 @@ body {
 .container { 
     max-width: 850px; 
     margin: 0 auto; 
-    padding: 120px 20px 40px 20px;
+    padding: 40px 20px 40px 20px; /* Reduced top padding as Hero handles the spacing now */
 }
 
 /* 4. NAVIGATION PILL */
@@ -74,7 +74,7 @@ nav {
     top: 25px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(252, 250, 242, 0.9); 
+    background: rgba(252, 250, 242, 0.8); 
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px); /* Safari Fix */
     padding: 8px 24px;
@@ -101,19 +101,17 @@ nav a {
 nav a:hover, nav a.active { color: var(--accent); }
 
 /* 5. TYPOGRAPHY HIERARCHY */
-header { text-align: center; margin-bottom: 60px; display: flex; flex-direction: column; align-items: center; }
-
 h1 { 
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
     font-size: clamp(2.5rem, 8vw, 4.5rem);
     font-weight: 700;
-    color: var(--text-dark);
+    color: white; /* Changed to white for the Hero overlay */
     line-height: 1.1;
     letter-spacing: -0.02em;
 }
 
 .subtitle { 
-    color: var(--accent); 
+    color: #52b788; /* Slightly lighter green for readability on dark photo overlay */
     text-transform: uppercase; 
     letter-spacing: 6px; 
     font-size: 0.85rem; 
@@ -172,8 +170,8 @@ footer { margin: 80px 0 40px 0; text-align: center; color: var(--text-muted); fo
 @media (max-width: 768px) {
     nav { width: 92%; justify-content: center; top: 15px; }
     nav a { font-size: 0.6rem; padding: 8px 8px; }
-    .container { padding-top: 80px; }
     .blob { width: 350px; height: 350px; }
+    .hero-section { height: 50vh; }
 }
 
 /* 9. DESKTOP BOOST */
@@ -186,4 +184,50 @@ footer { margin: 80px 0 40px 0; text-align: center; color: var(--text-muted); fo
     .b1 { background: #40916c; } 
     .b2 { background: #1b4332; } 
     .mesh-bg { filter: blur(140px); -webkit-filter: blur(140px); }
+}
+
+/* 10. HERO SECTION STYLES */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--accent); /* Fallback color */
+}
+
+.hero-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradient goes from clear at top to dark at bottom to ensure text is readable */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
+}
+
+.hero-text-overlay {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
