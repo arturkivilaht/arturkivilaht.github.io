@@ -1,19 +1,21 @@
 /* 
-   THEME: Green, Parchment & Black
+   THEME: Blue, Parchment & Black
    FONTS: Helvetica (Specific Headers), Times New Roman (Biography Headers)
-   UPDATED: January 2026 - Added Feature Split Layout
+   UPDATED: January 2026 - Transitioned from Green to Blue Theme
 */
 
 :root {
     color-scheme: light; 
-    --bg-main: #fcfaf2;        /* Parchment background */
-    --accent: #1b4332;         /* Deep Forest Green */
-    --text-dark: #0a0a0a;      /* Rich Black */
-    --text-muted: #4b5563;     /* Muted Charcoal */
+    --bg-main: #fcfaf2;        /* Kept: Parchment background */
+    --accent: #1e3a5f;         /* NEW: Midnight Navy (Replaced Forest Green) */
+    --accent-light: #5a7d9a;   /* NEW: Steel Blue (Replaced Light Green) */
+    --text-dark: #0a0a0a;      
+    --text-muted: #4b5563;     
     --glass: rgba(255, 255, 255, 0.4); 
-    --border: rgba(27, 67, 50, 0.15);  
+    --border: rgba(30, 58, 95, 0.15); /* Updated to match navy */
 }
 
+/* 2. RESET & BASE */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
@@ -27,7 +29,7 @@ body {
     min-height: 100vh;
 }
 
-/* 3. DYNAMIC MESH BACKGROUND */
+/* 3. DYNAMIC MESH BACKGROUND - Updated to Blue Tones */
 .mesh-bg {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -43,13 +45,13 @@ body {
     width: 600px; 
     height: 600px; 
     border-radius: 50%; 
-    opacity: 0.18;
+    opacity: 0.15;
     animation: float 20s infinite alternate; 
     will-change: transform;
 }
 
-.b1 { background: #52b788; top: -10%; left: -10%; }
-.b2 { background: #2d6a4f; bottom: -10%; right: -10%; animation-delay: -5s; }
+.b1 { background: #8da9c4; top: -10%; left: -10%; } /* Soft Blue */
+.b2 { background: var(--accent); bottom: -10%; right: -10%; animation-delay: -5s; }
 
 @keyframes float { 
     0% { transform: translate(0,0) scale(1); } 
@@ -57,7 +59,7 @@ body {
 }
 
 .container { 
-    max-width: 950px; /* Increased slightly for side-by-side look */
+    max-width: 950px; 
     margin: 0 auto; 
     padding: 140px 20px 40px 20px;
 }
@@ -102,7 +104,7 @@ h1 {
 }
 
 .subtitle { 
-    color: var(--accent); 
+    color: var(--accent-light); /* Steel Blue Subtitle */
     text-transform: uppercase; 
     letter-spacing: 4px; 
     font-size: 0.8rem; 
@@ -149,7 +151,7 @@ h1 {
 p { font-size: 1.05rem; margin-bottom: 1.5rem; color: #1a1a1a; }
 footer { margin: 60px 0; text-align: center; color: var(--text-muted); font-size: 0.75rem; }
 
-/* 10. NEW FEATURE SPLIT STYLING */
+/* 10. FEATURE SPLIT STYLING */
 .split-header {
     display: flex;
     align-items: center;
@@ -158,14 +160,14 @@ footer { margin: 60px 0; text-align: center; color: var(--text-muted); font-size
 }
 
 .header-photo-box {
-    flex: 0 0 35%; /* Photo takes 35% of the width */
+    flex: 0 0 35%;
 }
 
 .split-photo {
     width: 100%;
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 15px 35px rgba(27, 67, 50, 0.15);
+    box-shadow: 0 15px 35px rgba(30, 58, 95, 0.15); /* Shadow updated to navy */
     border: 1px solid var(--border);
 }
 
@@ -173,7 +175,7 @@ footer { margin: 60px 0; text-align: center; color: var(--text-muted); font-size
     flex: 1;
 }
 
-/* MOBILE ADAPTATION: Stack on small screens */
+/* MOBILE ADAPTATION */
 @media (max-width: 768px) {
     .split-header { flex-direction: column; text-align: center; }
     .header-photo-box { flex: 0 0 200px; width: 200px; margin: 0 auto; }
