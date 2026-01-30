@@ -118,7 +118,7 @@ h1 {
 
 /* 6. BIOGRAPHY HEADERS */
 #main-bio-header.sleek-header {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: clamp(1.8rem, 5vw, 2.2rem);
     font-weight: 700;
     display: flex; align-items: center; gap: 15px;
