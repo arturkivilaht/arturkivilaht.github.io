@@ -1,4 +1,16 @@
-* {
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #6c6c6c;
+  --line: rgba(17, 17, 17, 0.12);
+  --line-strong: rgba(17, 17, 17, 0.22);
+  --max: 1400px;
+  --pad: clamp(20px, 3vw, 44px);
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -8,122 +20,165 @@ html {
 
 body {
   margin: 0;
-  min-height: 100vh;
-  background: #ffffff;
-  color: #111111;
+  background: var(--bg);
+  color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.card-shell {
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site {
+  width: min(100%, var(--max));
+  margin: 0 auto;
+}
+
+.intro {
   min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 32px;
-}
-
-.card {
-  width: 100%;
-  max-width: 1120px;
-  min-height: 680px;
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  background: #ffffff;
-  border: 1px solid #111111;
-}
-
-.image-panel {
-  position: relative;
-  min-height: 680px;
-  background: #f4f4f4;
-  overflow: hidden;
-}
-
-.image-panel img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  filter: grayscale(100%) contrast(105%);
-}
-
-.content-panel {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 56px 56px 48px;
+  justify-content: flex-end;
+  padding: 32px var(--pad) 54px;
+  border-bottom: 1px solid var(--line);
 }
 
 .role {
-  margin: 0 0 16px;
+  margin: 0 0 18px;
   font-size: 12px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
+  color: var(--muted);
 }
 
 h1 {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 64px;
-  font-weight: 400;
-  line-height: 0.95;
+  font-size: clamp(64px, 15vw, 190px);
+  line-height: 0.88;
+  font-weight: 500;
+  letter-spacing: -0.08em;
+  max-width: 8ch;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.95fr) minmax(0, 1.05fr);
+  align-items: start;
+}
+
+.image-column {
+  padding: 0 var(--pad);
+  border-right: 1px solid var(--line);
+}
+
+.image-wrap {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 28px 0;
+}
+
+.image-wrap img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid var(--line-strong);
+}
+
+.text-column {
+  padding: 0 var(--pad);
+}
+
+.text-block {
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  padding: 48px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.text-block p {
+  margin: 0;
+  max-width: 680px;
+  font-size: clamp(22px, 2.4vw, 34px);
+  line-height: 1.24;
   letter-spacing: -0.04em;
 }
 
-.divider {
-  width: 64px;
-  height: 1px;
-  background: #111111;
-  margin: 28px 0 28px;
+.text-block.large p {
+  max-width: 14ch;
+  font-size: clamp(34px, 5vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -0.05em;
 }
 
-.bio {
-  margin: 0 0 20px;
-  font-size: 16px;
-  line-height: 1.75;
-  max-width: 42rem;
+.text-block.end {
+  min-height: 50vh;
 }
 
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  margin-top: 18px;
-  padding-top: 22px;
-  border-top: 1px solid #111111;
+.email {
+  display: inline-block;
+  font-size: clamp(28px, 4.2vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  border-bottom: 1px solid var(--text);
+  padding-bottom: 6px;
 }
 
-.links a {
-  color: #111111;
-  text-decoration: none;
-  font-size: 14px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.email:hover {
+  opacity: 0.65;
 }
 
-.links a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 900px) {
-  .card {
+@media (max-width: 980px) {
+  .layout {
     grid-template-columns: 1fr;
+  }
+
+  .image-column {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .image-wrap {
+    position: static;
     min-height: auto;
+    padding: 28px 0;
   }
 
-  .image-panel {
-    min-height: 420px;
+  .text-block,
+  .text-block.end {
+    min-height: auto;
+    padding: 58px 0;
   }
 
-  .content-panel {
-    padding: 34px 26px 30px;
+  .text-block.large p {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .intro {
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
-  h1 {
-    font-size: 42px;
+  .image-column,
+  .text-column {
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
-  .bio {
-    font-size: 15px;
-    line-height: 1.65;
+  .text-block p {
+    font-size: 20px;
+    line-height: 1.32;
+  }
+
+  .email {
+    font-size: 32px;
+    overflow-wrap: anywhere;
   }
 }
