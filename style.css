@@ -148,11 +148,12 @@ h1 {
 
 .intro p {
   margin: 0;
-  max-width: 28ch;
-  font-size: clamp(1.2rem, 1.7vw, 1.55rem);
-  line-height: 1.35;
-  letter-spacing: -0.02em;
+  max-width: 29ch;
+  font-size: clamp(1.14rem, 1.45vw, 1.34rem);
+  line-height: 1.58;
+  letter-spacing: -0.015em;
   font-weight: 500;
+  color: rgba(17, 17, 17, 0.9);
 }
 
 .body-copy {
@@ -161,9 +162,11 @@ h1 {
 }
 
 .body-copy p {
-  margin: 0 0 28px;
-  font-size: 1.08rem;
-  line-height: 1.8;
+  margin: 0 0 24px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  font-weight: 400;
   color: rgba(17, 17, 17, 0.82);
 }
 
@@ -262,13 +265,13 @@ h1 {
   }
 
   .intro p {
-    font-size: 1.12rem;
-    line-height: 1.42;
+    font-size: 1.08rem;
+    line-height: 1.56;
   }
 
   .body-copy p {
     font-size: 1rem;
-    line-height: 1.72;
+    line-height: 1.66;
   }
 
   .contact a {
