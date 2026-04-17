@@ -119,11 +119,13 @@ h1 {
 }
 
 .hero-image img {
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   filter: saturate(0.92) contrast(1.02);
+  background: rgba(255, 255, 255, 0.55);
 }
 
 .content {
@@ -146,22 +148,22 @@ h1 {
 
 .intro p {
   margin: 0;
-  max-width: 22ch;
-  font-size: clamp(1.5rem, 2.5vw, 2.35rem);
-  line-height: 1.15;
-  letter-spacing: -0.04em;
+  max-width: 24ch;
+  font-size: clamp(1.35rem, 2.1vw, 1.95rem);
+  line-height: 1.22;
+  letter-spacing: -0.03em;
   font-weight: 500;
 }
 
 .body-copy {
   padding-top: 8px;
-  max-width: 520px;
+  max-width: 560px;
 }
 
 .body-copy p {
   margin: 0 0 28px;
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: 1.04rem;
+  line-height: 1.75;
   color: rgba(17, 17, 17, 0.8);
 }
 
@@ -260,13 +262,13 @@ h1 {
   }
 
   .intro p {
-    font-size: 1.35rem;
-    line-height: 1.2;
+    font-size: 1.24rem;
+    line-height: 1.28;
   }
 
   .body-copy p {
-    font-size: 0.98rem;
-    line-height: 1.75;
+    font-size: 1rem;
+    line-height: 1.72;
   }
 
   .hero-image::before {
