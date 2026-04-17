@@ -3,122 +3,83 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>YOUR NAME</title>
+  <meta name="description" content="Composer portfolio">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="site-shell">
-    <header class="site-header">
-      <a class="brand" href="#top">
-        <span class="brand-line"></span>
-        <span class="brand-line short"></span>
-      </a>
+  <div class="page">
 
-      <nav class="site-nav" aria-label="Primary">
-        <a href="#about"><span></span></a>
-        <a href="#work"><span></span></a>
-        <a href="#events"><span></span></a>
-        <a href="#contact"><span></span></a>
+    <header class="site-header">
+      <a class="logo" href="#top">YOUR NAME</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#selected">Selected</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <main id="top">
       <section class="hero">
-        <div class="hero-copy">
-          <div class="kicker editable"></div>
-          <h1 class="display editable"></h1>
-          <div class="lead editable"></div>
-          <div class="hero-actions">
-            <a class="ghost-link" href="#work"><span></span></a>
-            <a class="ghost-link" href="#events"><span></span></a>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="portrait-frame">
-            <div class="portrait"></div>
-          </div>
+        <div class="hero-inner">
+          <p class="eyebrow">Composer</p>
+          <h1>YOUR NAME</h1>
+          <div class="hero-rule"></div>
         </div>
       </section>
 
-      <section id="about" class="section split">
-        <div class="section-label editable"></div>
-        <div class="section-body">
-          <div class="section-title editable"></div>
-          <div class="text-block editable tall"></div>
+      <section id="about" class="section section-about">
+        <div class="section-label">About</div>
+        <div class="section-content">
+          <p>
+            Composer with a Bachelor of Jazz Studies from the University of Manitoba,
+            where I studied performance under guitarist Larry Roy and composition from
+            saxophonist Jon Gordon, later completing a graduate certificate in Music
+            Composition at Humber College under composer Ari Posner and pianist Nancy Wilson.
+          </p>
+
+          <p>
+            Highlights professionally include touring with the Broadway musical "Chicago"
+            and working as a house band guitarist for Princess Cruises based in Los Angeles
+            and Fort Lauderdale. My work has been supported through collaborations with the
+            Canada Council for the Arts and the Manitoba Arts Council, as well as the Screen
+            Composers Guild of Canada, completing the SCGC mentorship program under composer
+            Virginia Kilbertus.
+          </p>
         </div>
       </section>
 
-      <section id="work" class="section">
-        <div class="section-head">
-          <div class="section-label editable"></div>
-          <div class="section-title editable"></div>
-        </div>
-
-        <div class="card-grid">
+      <section id="selected" class="section">
+        <div class="section-label">Selected</div>
+        <div class="cards">
           <article class="card">
-            <div class="card-meta editable"></div>
-            <div class="card-title editable"></div>
-            <div class="card-text editable"></div>
+            <span class="card-index">01</span>
+            <h2>Composition</h2>
           </article>
 
           <article class="card">
-            <div class="card-meta editable"></div>
-            <div class="card-title editable"></div>
-            <div class="card-text editable"></div>
+            <span class="card-index">02</span>
+            <h2>Performance</h2>
           </article>
 
           <article class="card">
-            <div class="card-meta editable"></div>
-            <div class="card-title editable"></div>
-            <div class="card-text editable"></div>
+            <span class="card-index">03</span>
+            <h2>Projects</h2>
           </article>
         </div>
       </section>
 
-      <section id="events" class="section split">
-        <div class="section-label editable"></div>
-
-        <div class="event-list">
-          <article class="event-row">
-            <div class="event-date editable"></div>
-            <div class="event-main">
-              <div class="event-title editable"></div>
-              <div class="event-meta editable"></div>
-            </div>
-          </article>
-
-          <article class="event-row">
-            <div class="event-date editable"></div>
-            <div class="event-main">
-              <div class="event-title editable"></div>
-              <div class="event-meta editable"></div>
-            </div>
-          </article>
-
-          <article class="event-row">
-            <div class="event-date editable"></div>
-            <div class="event-main">
-              <div class="event-title editable"></div>
-              <div class="event-meta editable"></div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="contact" class="section contact-block">
-        <div class="contact-title editable"></div>
-        <div class="contact-links">
-          <a href="#"><span></span></a>
-          <a href="#"><span></span></a>
-          <a href="#"><span></span></a>
+      <section id="contact" class="section contact">
+        <div class="section-label">Contact</div>
+        <div class="contact-block">
+          <a href="mailto:you@example.com">you@example.com</a>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="footer-line"></div>
-    </footer>
   </div>
 </body>
 </html>
