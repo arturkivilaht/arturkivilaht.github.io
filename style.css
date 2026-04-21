@@ -239,6 +239,7 @@ h1 {
   grid-column: 2;
   justify-self: end;
   text-align: right;
+  padding-right: 20px;
 }
 
 .site-footer {
@@ -288,6 +289,7 @@ h1 {
     justify-self: end;
     width: 100%;
     text-align: right;
+    padding-right: 20px;
   }
 
   .soundcloud-box {
