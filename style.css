@@ -237,11 +237,12 @@ h1 {
 
 .footer-contact .contact {
   grid-column: 2;
-  justify-self: start;
+  justify-self: end;
+  text-align: right;
 }
 
 .site-footer {
-  padding-top: 28px;
+  padding-top: 56px;
   text-align: center;
 }
 
@@ -284,7 +285,9 @@ h1 {
 
   .footer-contact .contact {
     grid-column: auto;
-    justify-self: center;
+    justify-self: end;
+    width: 100%;
+    text-align: right;
   }
 
   .soundcloud-box {
