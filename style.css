@@ -108,6 +108,11 @@ h1 {
   margin: 0;
   justify-self: end;
   width: min(100%, 460px);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  background:
+    url("portrait.jpg") center center / 110% auto no-repeat,
+    rgba(255, 255, 255, 0.55);
 }
 
 .hero-image::before {
@@ -126,8 +131,7 @@ h1 {
   box-shadow: var(--shadow);
   filter: saturate(0.92) contrast(1.02);
   background: rgba(255, 255, 255, 0.55);
-  transform: scale(1.10);
-  transform-origin: center;
+  opacity: 0;
 }
 
 .content {
