@@ -1,8 +1,9 @@
+
 :root {
   --bg: #f6f3ee;
   --paper: rgba(255, 255, 255, 0.5);
   --text: #111111;
-  --muted: rgba(17, 17, 17, 0.55);
+  --muted: rgba(17, 17, 17, 0.65);
   --line: rgba(17, 17, 17, 0.1);
   --max: 1400px;
   --radius: 28px;
@@ -110,9 +111,7 @@ h1 {
   width: min(100%, 460px);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  background:
-    url("portrait.jpg") center center / 107% auto no-repeat,
-    rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.55);
 }
 
 .hero-image::before {
@@ -126,12 +125,8 @@ h1 {
 .hero-image img {
   width: 100%;
   height: auto;
-  object-fit: contain;
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
   filter: saturate(0.92) contrast(1.02);
-  background: rgba(255, 255, 255, 0.55);
-  opacity: 0;
 }
 
 .content {
@@ -196,6 +191,12 @@ h1 {
   border-color: var(--text);
 }
 
+.contact a:focus-visible,
+.soundcloud-fallback a:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 5px;
+}
+
 .soundcloud-section {
   padding: clamp(36px, 6vw, 72px) 0 0;
 }
@@ -232,6 +233,19 @@ h1 {
   width: 100%;
   border: 0;
   border-radius: 18px;
+}
+
+.soundcloud-fallback {
+  margin: 12px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.soundcloud-fallback a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .footer-contact {
@@ -360,5 +374,19 @@ h1 {
 
   .site-footer p {
     font-size: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .contact a {
+    transition: none;
+  }
+
+  .contact a:hover {
+    transform: none;
   }
 }
